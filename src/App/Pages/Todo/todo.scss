@@ -1,0 +1,127 @@
+@import "../../Static/Styles/inheritance.scss";
+
+//todo-page
+.todo-wrapper {
+  max-width: 1000px;
+  max-height: 620px;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  background-color: #fff;
+  border: 4px double black;
+  overflow-x: hidden;
+}
+
+//todo-input
+.todo-input {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  border-bottom: 1px solid black;
+
+  .field {
+    padding: 20px;
+    border: none;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
+    font-size: 28px;
+    font-style: italic;
+  }
+
+  .add-button {
+    @extend %button-normal;
+    position: absolute;
+    height: 100%;
+    right: 20px;
+    cursor: pointer;
+
+    .fa-thumbs-up {
+      font-size: 24px;
+    }
+  }
+}
+
+//todo-item
+.todo-item {
+  @extend %display-flex;
+  justify-content: flex-start;
+  font-size: 24px;
+  line-height: 24px;
+  border-bottom: 1px solid black;
+  min-height: 60px;
+  list-style: none;
+  font-family: cursive;
+  padding: 0 20px 0 20px;
+  position: relative;
+
+  .text {
+    position: relative;
+    left: 20px;
+
+    &__complete {
+      position: relative;
+      left: 20px;
+      text-decoration: line-through;
+      color: gray;
+    }
+  }
+
+  .far {
+    left: 0px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .fa-times {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+  }
+}
+
+//todo-footer
+.todo-footer {
+  @extend %display-flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  border-top: 1px solid black;
+
+  .tasks-count {
+    position: absolute;
+    line-height: 24px;
+    left: 20px;
+    font-size: 24px;
+    font-family: cursive;
+  }
+
+  .tasks-reverse {
+    @extend %button-normal;
+    position: absolute;
+    right: 20px;
+    font-family: cursive;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+  }
+
+  .tasks-page {
+    position: relative;
+
+    .pages-link {
+      text-decoration: none;
+      font-size: 24px;
+      color: black;
+      padding: 0 15px 0 15px;
+
+      &:active {
+        color: red;
+      }
+    }
+  }
+}
