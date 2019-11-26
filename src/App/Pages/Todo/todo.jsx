@@ -7,12 +7,7 @@ import {
   reverseTask
 } from "../../Actions/action-creator.js"
 import "./todo.scss"
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  browserHistory
-} from "react-router-dom"
+import { HashRouter as Router, Switch, Route } from "react-router-dom"
 import _ from "lodash"
 
 import { createHashHistory } from "history"
@@ -61,7 +56,7 @@ class ToDo extends Component {
           onChange={this.handleChange}
           value={taskText}
         />
-        <Router history={browserHistory}>
+        <Router>
           <div className="todo-wrapper">
             {tasks && tasks.length !== 0 && (
               <Switch>
