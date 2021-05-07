@@ -30,7 +30,7 @@
     "react-svg": "^10.0.4",
     "redux": "^4.0.4",
     "redux-localstorage-simple": "^2.1.6",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "babel-loader": "^8.0.4",
